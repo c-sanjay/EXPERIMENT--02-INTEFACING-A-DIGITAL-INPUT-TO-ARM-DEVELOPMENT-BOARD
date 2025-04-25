@@ -51,125 +51,25 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```c
+HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
+HAL_Delay(2000);
+HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);
+HAL_Delay(2000);
 ```
-SANJAY C
-212223240150
-AIML
-```
-#include "main.h"
-#include"stdbool.h"
-bool buttonstatus;
-
-void pushbutton();
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-/* USER CODE BEGIN PFP */
-
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
-int main(void)
-{
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
-  SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-	  pushbutton();
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
-}
-void pushbutton()
-{
-buttonstatus=  HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
-if(pushbutton==0)
-{
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-HAL_Delay(500);
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-    HAL_Delay(500);
-
-}
-else
-{
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-}
-
-}
 
 
 ## Output  :
 
- OFF MODE:
- 
- ![off 2](https://github.com/rasika1206/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/124434806/183aa7b9-d578-4d2e-88c5-32553445be82)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/b3c12626-d1f3-4bf9-b04e-d8d9046d0e91" />
 
- ON MODE:
- 
- ![on 2](https://github.com/rasika1206/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/124434806/8aa91fa0-247c-4e90-add7-69e6927ae60c)
 
+![WhatsApp Image 2025-04-21 at 14 42 28_66fda3aa](https://github.com/user-attachments/assets/9164c0f3-8d2d-45fa-9eeb-1754cb64c167)
+
+![WhatsApp Image 2025-04-21 at 14 42 29_5ce21e7a](https://github.com/user-attachments/assets/7d94623c-19d2-4440-942b-5474b4f4dd19)
+
+
+ 
+ 
 ## Result :
 Interfacing a digital Input (Pushbutton ) with ARM microcontroller based IOT development is executed and the results are verified.
